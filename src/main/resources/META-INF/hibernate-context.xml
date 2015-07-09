@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans"    
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     
+    xmlns:aop="http://www.springframework.org/schema/aop"    
+    xmlns:tx="http://www.springframework.org/schema/tx"    
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:jee="http://www.springframework.org/schema/jee"   
+    xsi:schemaLocation="     
+          http://www.springframework.org/schema/beans     
+          http://www.springframework.org/schema/beans/spring-beans-3.2.xsd     
+          http://www.springframework.org/schema/tx     
+          http://www.springframework.org/schema/tx/spring-tx-3.2.xsd    
+          http://www.springframework.org/schema/jee     
+          http://www.springframework.org/schema/jee/spring-jee-3.2.xsd 
+          http://www.springframework.org/schema/context     
+          http://www.springframework.org/schema/context/spring-context-3.2.xsd     
+          http://www.springframework.org/schema/aop     
+          http://www.springframework.org/schema/aop/spring-aop-3.2.xsd" default-autowire="byName">  
+  
+   <bean id="propertyConfigurer"      
+	        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">       
+	    <property name="location" value="classpath:database.properties"/>
+	</bean>
+	<!-- 閰嶇疆鏁版嵁婧恉b -->    
+    <bean id="db"
+        class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${driverClassName}" />
+        <property name="jdbcUrl" value="${db.url}" />
+        <property name="user" value="${db.username}" />    
+        <property name="password" value="${db.password}" />
+        <!-- 鎸囧畾杩炴帴鏁版嵁搴撹繛鎺ユ睜鐨勬渶澶ц繛鎺ユ暟 -->        
+        <property name="maxPoolSize" value="100"/>
+        <!-- 鎸囧畾杩炴帴鏁版嵁搴撹繛鎺ユ睜鐨勬渶灏忚繛鎺ユ暟 -->
+        <property name="minPoolSize" value="5"/>
+        <!-- 鎸囧畾杩炴帴鏁版嵁搴撹繛鎺ユ睜鐨勫垵濮嬪寲杩炴帴鏁� -->
+        <property name="initialPoolSize" value="2"/>
+        <property name="idleConnectionTestPeriod" value="120"/>    
+        <property name="acquireIncrement" value="2"/> 
+        <property name="testConnectionOnCheckin" value="true"></property>
+        <property name="maxStatements" value="0"></property>
+    </bean>
+    
+    <!-- 閰嶇疆hibernate鐩稿叧淇℃伅 -->  
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">  
+        <!--鎸囧畾Hibernate鏍稿績閰嶇疆鏂囦欢--> 
+     	<property name="dataSource">  
+            <ref bean="db"/> 
+        </property>  
+        <property name="packagesToScan"> 
+              <list> 
+                   <value>com.greeningtree.domain.common</value>
+                   <value>com.greeningtree.domain.ecom</value>
+              </list> 
+        </property>
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">  
+                	org.hibernate.dialect.MySQLDialect
+                </prop>  
+                  
+                <prop key="hibernate.show_sql">true</prop>  
+                <prop key="hibernate.use_outer_join">true</prop>  
+                <prop key="hibernate.jdbc.batch_size">10</prop>  
+                <prop key="hibernate.jdbc.fetch_size">10</prop>  
+                <prop key="hibernate.connection.pool_size">100</prop>  
+                <prop key="hibernate.connection.autocommit">false</prop>  
+                <prop key="hibernate.cache.use_query_cache">false</prop>  
+                <prop key="hibernate.max_fetch_depth">1</prop>  
+                <prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>  
+            </props>  
+        </property>   
+    </bean> 
+    
+</beans>

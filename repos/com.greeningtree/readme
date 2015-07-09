@@ -1,0 +1,10 @@
+
+--进入项目所在路径
+mvn install:install-file -Dfile=/Users/milo/develop/gotobus/gotobus/development/gotobus-search/repos/com.gotobus/tourico/1.0/tourico.jar -DgroupId=com.gotobus -DartifactId=tourico -Dversion=1.0 -Dpackaging=jar  -DgeneratePom=true
+
+
+mvn install:install-file -Dfile=dynclass.jar -DgroupId=com.gotobus -DartifactId=dynclass -Dversion=0.6 -Dpackaging=jar  -DgeneratePom=true
+mvn install:install-file -Dfile=tourico.jar -DgroupId=com.gotobus -DartifactId=tourico -Dversion=1.0 -Dpackaging=jar  -DgeneratePom=true
+mvn install:install-file -Dfile=touricoRes.jar -DgroupId=com.gotobus -DartifactId=touricoRes -Dversion=1.0 -Dpackaging=jar  -DgeneratePom=true
+
+mvn install:install-file -Dfile=mail.jar -DgroupId=com.gotobus -DartifactId=mail -Dversion=1.0 -Dpackaging=jar  -DgeneratePom=true

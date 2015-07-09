@@ -1,0 +1,9 @@
+﻿1.创建新一文本a.txt,编码方式为ISO-8859-1
+2.编辑需要转码的中文
+3.找到对应jdk环境C:\Program Files (x86)\Java\jdk1.6.0_01\bin
+4.在cmd下运行native2ascii.exe a.txt b.txt
+5.将b.txt内容放入messages_zh_CN.properties即可
+
+繁体
+1.打开的Unicode.exe,输入繁体,点击c to u,编译成unicode编码
+2.将内容放入messages_zh_TW.properties即可
