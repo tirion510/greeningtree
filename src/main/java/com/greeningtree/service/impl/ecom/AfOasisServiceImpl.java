@@ -59,6 +59,8 @@ public class AfOasisServiceImpl implements AfOasisService {
 		AfOasisType currentOasisType = oasisTypeDao.getOasisType(oasisTypeId);
 		if(currentOasisType != null){
 			AfAccountOasis accountOasis = getAccountOasisById(accountId);
+			accountOasis.focusOasisType(currentOasisType);
+			accountOasisDao.updateAccountOasis(accountOasis);
 		}
 	}
 

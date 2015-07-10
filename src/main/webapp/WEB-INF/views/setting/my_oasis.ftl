@@ -22,25 +22,25 @@
 												<a class="topic-item-title-link" href="/oasis/${oasisInfo.oasisType.oasisTypeId}">${oasisInfo.oasisType.oasisTypeName}</a>
 												<a class="zg-gray pin topic-hover-content" data-action="pin-topic" href="javascript:;">
 													<i class="z-icon-pin"></i>
-													设为常去话题
+													set special focus
 												</a>
-												<a id="ft-99" class="right zg-gray unfollow topic-hover-content" data-action="unfollow" href="setting/unfocus_oasis_type.do?oasis_type_id=${oasisInfo.oasisType.oasisTypeId}">取消关注</a>
+												<a id="ft-99" class="right zg-gray unfollow topic-hover-content" data-action="unfollow" href="setting/unfocus_oasis_type.do?oasis_type_id=${oasisInfo.oasisType.oasisTypeId}">Unfocus</a>
 												</h3>
 											</div>
 											<div class="topic-item-feed-digest">
 												<div class="topic-feed-item">
-													<a href="/question/31952696">如何让显示器显示120Hz的视频？</a>
-													<span class="zg-gray time">刚刚</span>
+													<a href="/question/31952696">${oasisInfo.oasisType.oasisTypeName}topic1</a>
+													<span class="zg-gray time">23 seconds ago</span>
 												</div>
 												<div class="topic-feed-item">
-													<a href="/question/22083698">网络直播视频架构？</a>
-													<span class="zg-gray time">3 秒前</span>
+													<a href="/question/22083698">${oasisInfo.oasisType.oasisTypeName}topic2</a>
+													<span class="zg-gray time">3 hours ago</span>
 												</div>
 												<div class="topic-feed-item">
-													<a href="/question/31923973">微信遇到有感觉的人，天天聊，男人确不提见面？</a>
-													<span class="zg-gray time">27 秒前</span>
+													<a href="/question/31923973">${oasisInfo.oasisType.oasisTypeName}topic3</a>
+													<span class="zg-gray time">3 hours ago</span>
 												</div>
-												<a class="zg-link-litblue" href="/oasis/${oasisInfo.oasisType.oasisTypeId}">进入话题</a>
+												<a class="zg-link-litblue" href="/oasis/${oasisInfo.oasisType.oasisTypeId}">check all 13447 topic</a>
 											</div>
 										</div>
 									</div>
@@ -58,23 +58,23 @@
 												<a class="topic-item-title-link" href="/oasis/${otherOasisType.oasisTypeId}">${otherOasisType.oasisTypeName}</a>
 												</h3>
 												<div class="right" style="margin-top: -26px;">
-													<a class="btn btn-primary" style="padding: 2px 10px;" href="setting/focus_oasis_type.do?oasis_type_id=${otherOasisType.oasisTypeId}">关注</a>
+													<a class="btn btn-primary" style="padding: 2px 10px;" href="setting/focus_oasis_type.do?oasis_type_id=${otherOasisType.oasisTypeId}">Focus</a>
 												</div>
 											</div>
 											<div class="topic-item-feed-digest">
 												<div class="topic-feed-item">
-													<a href="/question/31952696">如何让显示器显示120Hz的视频？</a>
-													<span class="zg-gray time">刚刚</span>
+													<a href="/question/31952696">${otherOasisType.oasisTypeName}topic1</a>
+													<span class="zg-gray time">2 seconds ago</span>
 												</div>
 												<div class="topic-feed-item">
-													<a href="/question/22083698">网络直播视频架构？</a>
-													<span class="zg-gray time">3 秒前</span>
+													<a href="/question/22083698">${otherOasisType.oasisTypeName}topic2</a>
+													<span class="zg-gray time">15 seconds ago</span>
 												</div>
 												<div class="topic-feed-item">
-													<a href="/question/31923973">微信遇到有感觉的人，天天聊，男人确不提见面？</a>
-													<span class="zg-gray time">27 秒前</span>
+													<a href="/question/31923973">${otherOasisType.oasisTypeName}topic3</a>
+													<span class="zg-gray time">18 seconds ago</span>
 												</div>
-												<a class="zg-link-litblue" href="/oasis/${otherOasisType.oasisTypeId}">进入话题</a>
+												<a class="zg-link-litblue" href="/oasis/${otherOasisType.oasisTypeId}">check all 13382 topic</a>
 											</div>
 										</div>
 									</div>

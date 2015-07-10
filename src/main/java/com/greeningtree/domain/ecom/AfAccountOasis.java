@@ -11,6 +11,8 @@ import org.hibernate.annotations.GenericGenerator;
 import com.greeningtree.bean.ecom.JAccountOasisInfo;
 import com.greeningtree.bean.ecom.JOasisInfo;
 
+import java.util.ArrayList;
+
 
 @Entity
 @Table(name="af_account_oasis")
@@ -53,8 +55,12 @@ public class AfAccountOasis implements java.io.Serializable{
 	public AfAccountOasis focusOasisType(AfOasisType oasisType){
 		JAccountOasisInfo jAccountOasisInfo = new JAccountOasisInfo();
 		jAccountOasisInfo = (JAccountOasisInfo) jAccountOasisInfo.xmlToObject(this.getAccountOasisInfo());
-		JOasisInfo oasisInfo = new JOasisInfo();
-//		jAccountOasisInfo.getOasisInfos().add(e)
-		return null;
+		JOasisInfo oasisInfo = new JOasisInfo(oasisType.getId());
+		if(jAccountOasisInfo.getOasisInfos() == null){
+			jAccountOasisInfo.setOasisInfos(new ArrayList<JOasisInfo>());
+		}
+		jAccountOasisInfo.getOasisInfos().add(oasisInfo);
+		this.setAccountOasisInfo(jAccountOasisInfo.objectToXml());
+		return this;
 	}
 }

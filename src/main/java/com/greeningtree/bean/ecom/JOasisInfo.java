@@ -70,4 +70,15 @@ public class JOasisInfo extends JObject {
 		this.oasisType = null;
 		return super.objectToXml();
 	}
+
+	public JOasisInfo(){
+
+	}
+
+	public JOasisInfo(Integer oasisTypeId){
+		this.oasisTypeId = oasisTypeId;
+		this.status = 1;
+		this.focusDate = new Date();
+		this.point = 0;
+	}
 }
