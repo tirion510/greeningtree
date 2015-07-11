@@ -24,7 +24,7 @@
 													<i class="z-icon-pin"></i>
 													set special focus
 												</a>
-												<a id="ft-99" class="right zg-gray unfollow topic-hover-content" data-action="unfollow" href="setting/unfocus_oasis_type.do?oasis_type_id=${oasisInfo.oasisType.oasisTypeId}">Unfocus</a>
+												<a id="ft-99" class="right zg-gray unfollow topic-hover-content" data-action="unfollow" href="setting/unfocus_oasis_type.do?oasis_type_id=${oasisInfo.oasisType.oasisTypeId}"><@spring.message "Following"/></a>
 												</h3>
 											</div>
 											<div class="topic-item-feed-digest">
@@ -58,7 +58,7 @@
 												<a class="topic-item-title-link" href="/oasis/${otherOasisType.oasisTypeId}">${otherOasisType.oasisTypeName}</a>
 												</h3>
 												<div class="right" style="margin-top: -26px;">
-													<a class="btn btn-primary" style="padding: 2px 10px;" href="setting/focus_oasis_type.do?oasis_type_id=${otherOasisType.oasisTypeId}">Focus</a>
+													<a class="btn btn-primary" style="padding: 2px 10px;" href="setting/focus_oasis_type.do?oasis_type_id=${otherOasisType.oasisTypeId}"><@spring.message "Follow"/></a>
 												</div>
 											</div>
 											<div class="topic-item-feed-digest">
